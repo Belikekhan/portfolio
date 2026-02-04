@@ -1,65 +1,69 @@
-import Image from "next/image";
+'use client';
+
+import Link from "next/link";
+import { Button } from "@/components/ui/Button";
+import SectionWrapper from "@/components/ui/SectionWrapper";
+import TerminalHero from "@/components/ui/TerminalHero";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <SectionWrapper id="hero" className="relative flex items-center justify-center min-h-[calc(100vh-80px)] overflow-hidden bg-[#0a0a0a]">
+       {/* Background ambient glow */}
+       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-green-500/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+      <div className="container px-4 md:px-6 relative z-10 w-full h-full flex flex-col md:flex-row items-center gap-12">
+        
+        {/* Terminal - Top Left (Stack first on mobile, Left on Desktop) */}
+        <motion.div 
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="w-full md:w-1/2 order-1 md:order-1 flex justify-start"
+        >
+            {/* Scaled down slightly to fit well as a side element */}
+           <div className="w-full max-w-[500px]">
+              <TerminalHero />
+           </div>
+        </motion.div>
+
+        {/* Main Text Content - Restored Original Font & Style */}
+        <motion.div 
+           initial={{ opacity: 0, x: 50 }}
+           animate={{ opacity: 1, x: 0 }}
+           transition={{ duration: 0.8, delay: 0.2 }}
+           className="w-full md:w-1/2 order-2 md:order-2 flex flex-col items-center md:items-start text-center md:text-left space-y-8"
+        >
+          <div className="space-y-4 max-w-2xl">
+            <h1 className="text-4xl font-extrabold tracking-tighter sm:text-5xl md:text-6xl text-white">
+              Full Stack Developer <br className="hidden sm:inline" />
+              <span className="text-gray-400 block mt-2 text-3xl sm:text-4xl font-bold">
+                Building Scalable & Secure Web Apps
+              </span>
+            </h1>
+            <p className="max-w-[600px] text-gray-400 md:text-xl leading-relaxed">
+            4+ years of experience developing robust digital systems for SaaS and enterprise environments, including projects requiring structured workflows, reliability, and compliance-ready design.
+            </p>
+          </div>
+          
+          <div className="flex flex-row gap-4">
+            <Button asChild size="lg" className="h-12 px-8 text-base bg-white text-black hover:bg-gray-200">
+              <Link href="/projects" className="flex items-center gap-2">
+                View Projects
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="h-12 px-8 text-base border-gray-700 text-gray-300 hover:bg-gray-800 hover:text-white"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+              <Link href="/contact">Contact Me</Link>
+            </Button>
+          </div>
+        </motion.div>
+
+      </div>
+    </SectionWrapper>
   );
 }
