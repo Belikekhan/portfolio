@@ -17,7 +17,7 @@ const TerminalHero = () => {
     if (initialized.current) return;
     initialized.current = true;
 
-    let timeoutId: NodeJS.Timeout;
+
     
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const sequence = async () => {
@@ -100,7 +100,7 @@ const TerminalHero = () => {
 
     sequence();
 
-    return () => clearTimeout(timeoutId);
+
   }, []);
 
   return (
