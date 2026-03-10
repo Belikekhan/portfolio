@@ -7,22 +7,22 @@ export default function ContactPage() {
     const contactLinks = [
         {
             label: "Email",
-            value: "hello@adnancreate.com",
-            href: "mailto:hello@adnancreate.com",
+            value: "adnankhan3120@gmail.com",
+            href: "mailto:adnankhan3120@gmail.com",
             icon: <Mail className="w-6 h-6" />,
             description: "Drop me a line for opportunities or just to say hi."
         },
         {
             label: "LinkedIn",
-            value: "linkedin.com/in/adnancreate",
-            href: "https://linkedin.com/in/adnancreate",
+            value: "linkedin.com/in/mohammed-adnan-khan-923832239",
+            href: "https://www.linkedin.com/in/mohammed-adnan-khan-923832239",
             icon: <Linkedin className="w-6 h-6" />,
             description: "Connect with me professionally."
         },
         {
             label: "GitHub",
-            value: "github.com/adnancreate",
-            href: "https://github.com/adnancreate",
+            value: "github.com/Belikekhan",
+            href: "https://github.com/Belikekhan",
             icon: <Github className="w-6 h-6" />,
             description: "Check out my open source contributions."
         }
@@ -38,7 +38,7 @@ export default function ContactPage() {
                                 Get in <span className="text-primary">Touch</span>
                             </h1>
                             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
+                                I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
                             </p>
                         </div>
 

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function Footer() {
     return (
@@ -16,7 +16,7 @@ export default function Footer() {
 
                 <div className="flex items-center gap-6">
                     <a
-                        href="https://github.com/adnancreate"
+                        href="https://github.com/Belikekhan"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-foreground transition-colors"
@@ -25,7 +25,7 @@ export default function Footer() {
                         <Github size={20} />
                     </a>
                     <a
-                        href="https://linkedin.com/in/adnancreate"
+                        href="https://www.linkedin.com/in/mohammed-adnan-khan-923832239"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-foreground transition-colors"
@@ -34,7 +34,7 @@ export default function Footer() {
                         <Linkedin size={20} />
                     </a>
                     <a
-                        href="mailto:hello@adnancreate.com"
+                        href="mailto:adnankhan3120@gmail.com"
                         className="text-muted-foreground hover:text-foreground transition-colors"
                         aria-label="Email"
                     >
