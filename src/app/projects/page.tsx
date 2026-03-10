@@ -1,5 +1,8 @@
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/Card";
+import { Button } from "@/components/ui/Button";
+import { ExternalLink } from "lucide-react";
+import Link from "next/link";
 
 import ProjectSlider from "@/components/ProjectSlider";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/Accordion";
@@ -9,6 +12,7 @@ export default function ProjectsPage() {
     {
         title: "Glorep Compliance & Identity Verification (IDV) Platform",
         description: "A comprehensive, multi-tenant SaaS solution designed to streamline KYC and AML workflows.",
+        link: "https://glorep.com/",
         details: [
             "Architecture: React.js frontend ecosystem with a shared API backend, divided into four distinct applications.",
             "Super Admin Portal: Central command center for SaaS lifecycle management, tenant onboarding, subscription handling, and system-wide risk monitoring.",
@@ -30,6 +34,7 @@ export default function ProjectsPage() {
     {
         title: "Alf Management Dashboard",
         description: "A comprehensive administrative solution designed for the Al Fajr organization to manage resources, members, and financial records.",
+        link: "https://al-fajr.in/login",
         details: [
             "Member Management Module: Handles the complete lifecycle of organization members (onboarding, profiles, status) using secure API routes and Cloudinary for media.",
             "Financial Transaction System: records and tracks credits/debits with double-entry compatible logging, Firestore transactions, and PDF/CSV reporting.",
@@ -71,11 +76,20 @@ export default function ProjectsPage() {
                         <div className="grid gap-6">
                             {projects.map((project, index) => (
                                 <Card key={index} className="border-l-4 border-l-primary shadow-sm hover:shadow-md transition-shadow">
-                                    <CardHeader>
-                                        <CardTitle className="text-2xl font-bold">{project.title}</CardTitle>
-                                        <CardDescription className="text-lg mt-2">
-                                            {project.description}
-                                        </CardDescription>
+                                    <CardHeader className="flex flex-col md:flex-row md:items-start justify-between gap-4">
+                                        <div className="space-y-2">
+                                            <CardTitle className="text-2xl font-bold">{project.title}</CardTitle>
+                                            <CardDescription className="text-lg">
+                                                {project.description}
+                                            </CardDescription>
+                                        </div>
+                                        {project.link && (
+                                            <Button asChild variant="outline" size="sm" className="shrink-0 gap-2">
+                                                <Link href={project.link} target="_blank" rel="noopener noreferrer">
+                                                    Live Demo <ExternalLink className="w-4 h-4" />
+                                                </Link>
+                                            </Button>
+                                        )}
                                     </CardHeader>
                                     <CardContent className="space-y-4">
 
