@@ -84,9 +84,14 @@ export default function ProjectsPage() {
                                             </CardDescription>
                                         </div>
                                         {project.link && (
-                                            <Button asChild variant="outline" size="sm" className="shrink-0 gap-2">
-                                                <Link href={project.link} target="_blank" rel="noopener noreferrer">
-                                                    Live Demo <ExternalLink className="w-4 h-4" />
+                                            <Button asChild variant="outline" size="sm" className="shrink-0">
+                                                <Link 
+                                                    href={project.link} 
+                                                    target="_blank" 
+                                                    rel="noopener noreferrer"
+                                                    className="flex items-center gap-2"
+                                                >
+                                                    Live <ExternalLink className="w-4 h-4" />
                                                 </Link>
                                             </Button>
                                         )}
