@@ -9,6 +9,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 export default function ProjectsPage() {
     const projects = [
+
     {
         title: "Glorep Compliance & Identity Verification (IDV) Platform",
         description: "A comprehensive, multi-tenant SaaS solution designed to streamline KYC and AML workflows.",
@@ -56,7 +57,22 @@ export default function ProjectsPage() {
             "/projects/alf/Add_Team_Member.png",
             "/projects/alf/Add_Role.png"
         ]
-    }
+    },
+        {
+        title: "LLM Talks",
+        description: "An interactive, spectator-mode web application where users can watch two distinct AI models engage in an autonomous, unscripted conversation set against a pixel-art campfire scene.",
+        link: "https://llm-talks.vercel.app/setup",
+        details: [
+            "The Setup Phase: Users configure the arena, input their own Groq API Key or use 'Demo Mode', select a Topic, conversation mode, and distinct AI Avatars with model IDs and custom system prompts.",
+            "The Orchestrator (src/lib/orchestrator.ts): Handles turn-based logic autonomously, maintains full conversation history, pings the API route, and enforces a strict 2-second delay between turns.",
+            "Visual Arena: Cinematic pixel-art nighttime environment with Custom CSS gradients. Features stationary Avatars with shaking animations/thinking dots, and a WhatsApp-style seamlessly auto-scrolling message queue generating real-time typing effects.",
+            "UI Overlay: HUD displays topics, modes, and turn numbers. Control Toolbar offers blurred glassmorphism allowing pause/resume of the live generation."
+        ],
+        technologies: ["Next.js 14", "Zustand", "Groq SDK", "Custom CSS", "Tailwind CSS"],
+          images: [ "/projects/llmtalk/llmtalk_ss1.png",
+            "/projects/llmtalk/llmtalk_ss2.png"
+        ]
+    },
 ];
 
     return (

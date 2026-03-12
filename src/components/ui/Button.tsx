@@ -43,6 +43,14 @@ export interface ButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ({ className, variant, size, asChild = false, ...props }, ref) => {
+        if (asChild && props.children) {
+            const child = React.Children.only(props.children) as React.ReactElement<unknown>;
+            return React.cloneElement(child, {
+                className: cn(buttonVariants({ variant, size, className }), (child.props as { className?: string }).className),
+                ...props,
+            });
+        }
+
         return (
             <motion.button
                 whileHover={{ scale: 1.02 }}

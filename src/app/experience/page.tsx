@@ -9,11 +9,7 @@ import {
     Target, 
     Workflow, 
     Search, 
-    Cpu, 
-    Code2, 
-    Database, 
-    GitBranch, 
-    Terminal 
+    Code2
 } from "lucide-react";
 import { motion } from "framer-motion";
 import SystemArchitecture from "@/components/ui/SystemArchitecture";
@@ -182,8 +178,6 @@ export default function ExperiencePage() {
                                 </div>
                             </div>
                         </div>
-
-
 
                     </div>
                 </div>

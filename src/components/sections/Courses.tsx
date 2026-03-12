@@ -22,6 +22,14 @@ const courses = [
         link: "https://verify.skilljar.com/c/8g5exusnggwh",
         description: "Foundational course on leveraging Claude AI models for prompt engineering and developer workflows.",
         status: "Certified"
+    },
+    {
+        title: "AI Fluency: Framework & Foundations",
+        provider: "Skilljar / Anthropic",
+        date: "Completed",
+        link: "https://verify.skilljar.com/c/oikn2yi7qqf5",
+        description: "Anthropic has partnered with academic experts Prof. Joseph Feller (University College Cork) and Prof. Rick Dakan (Ringling College) to launch an AI fluency course that teaches practical skills for effective, efficient, ethical, and safe AI interaction.",
+        status: "Certified"
     }
 ];
 
